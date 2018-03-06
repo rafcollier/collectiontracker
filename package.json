@@ -1,0 +1,26 @@
+{
+  "name": "firstlast",
+  "version": "1.0.0",
+  "description": "first & last sentences of books database using MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "intl": "^1.2.5",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.5",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1"
+  },
+  "author": "Roger Collier",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.5.4"
+  }
+}

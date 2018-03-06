@@ -1,0 +1,21 @@
+body {
+	margin-top:50px;
+}
+
+.black-border {
+	border: solid 1px black;
+}
+
+
+.margin-bottom {
+  margin-bottom:15px;}
+
+input[type="text"] {
+    font-size:18px
+}
+input[type="password"] {
+    font-size:18px
+}
+input[type="submit"] {
+    font-size:18px
+}

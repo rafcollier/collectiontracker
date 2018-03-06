@@ -1,0 +1,19 @@
+// aloysius
+
+
+
+// MONGO DB
+
+
+SHELL COMMANDS
+cd /bin
+mongod -- to run
+mongo -- for shell
+show dbs
+use <db name> //use this database
+db.<collection name>.find().pretty() //show contents of a collection
+
+
+//ANGULAR
+
+generate new component: ng generate component <name>

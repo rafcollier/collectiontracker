@@ -1,0 +1,26 @@
+<body>
+
+<div class = "wrapper4">
+  <div><h5>SORT BY: </h5></div>
+  <div *ngFor="let searchParam of searchParams; let k = index">
+    <div> <a href="" onClick="return false;"><span (click)="onSortClick(searchParam)"><h5> {{searchParam }} </h5></span></a></div>
+  </div>
+</div>
+
+<div class = "wrapper">
+  <div *ngFor="let item of items; let i = index">
+    <div> <a href="" onClick="return false;"><span (click)="onItemClick(item, i)"><img src={{item.itemImageURL}} width=190px></span></a></div>
+  </div>
+</div>
+
+<div class = "wrapper3">
+  <div> <a href="" onClick="return false;"><span (click)="onPreviousClick()"><h5> Previous </h5></span></a></div>
+  <div *ngFor="let indexPage of indexPages; let j = index">
+    <div> <a href="" onClick="return false;"><span (click)="onIndexClick(j)"><h5> {{ indexPage }} </h5></span></a></div>
+  </div>
+  <div> <a href="" onClick="return false;"><span (click)="onNextClick()"><h5> Next  </h5></span></a></div>
+</div>
+
+
+</body>
+

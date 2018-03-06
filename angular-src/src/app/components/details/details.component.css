@@ -1,0 +1,123 @@
+
+.wrapper1 div {
+  background: #fff;
+  padding: 1em;
+}
+
+/*
+.wrapper div:nth-child(odd){
+  background: #ddd;
+}
+*/
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  /*grid-template-columns: repeat(4, [col] 150px ) ;*/
+  grid-template-columns: 1fr;
+  /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+  grid-template-rows: repeat(2, [row] auto  );
+  background-color: #fff;
+  color: #444;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper2 {
+  display: grid;
+  margin-top: 100px;
+  grid-gap: 10px;
+  /*grid-template-columns: repeat(4, [col] 150px ) ;*/
+  grid-template-columns: 1fr;
+  /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+  grid-template-rows: repeat(2, [row] auto  );
+  background-color: #fff;
+  color: #444;
+  justify-items: center;
+  align-items: center;
+}
+
+
+
+
+body { 
+  margin: 50px; 
+  background: #fff;
+}
+
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 25px;
+  color: red;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+a {
+  font-size: 16px;
+}
+
+
+.margin-bottom {
+	margin-bottom:15px;
+}
+
+.black-border {
+  border:solid 1px black;
+}
+
+.grey-border {
+  border:solid 1px lightgrey;
+}
+
+.font-red {
+	color:red;
+}
+
+.font-lightgrey {
+	color:lightgrey;
+}
+
+.font-grey {
+	color:grey;
+}
+
+.background-grey {
+	background-color:grey;
+}
+
+.margin-left {
+	margin-left:15px;
+}
+
+.icon-nolink {
+  
+  color: black;
+
+  :link {
+      color: black;
+  }
+
+  :visited {
+      color: black;
+  }
+
+  :hover {
+      color: black;
+  }
+
+  :active {
+      color: black;
+  }
+
+}

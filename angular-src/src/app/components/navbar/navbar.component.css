@@ -1,0 +1,27 @@
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: grey;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: grey;
+}
+
+input[type="text"] {
+    font-size:14px
+}
+input[type="submit"] {
+    font-size:14px
+}
+
+.black-border {
+  border:solid 1px black;
+}
+
+.navbar {
+      background-color: #99ccff; 
+  border: 0;
+}
+
+
+

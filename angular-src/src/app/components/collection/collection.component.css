@@ -1,0 +1,161 @@
+
+.wrapper div {
+  background: #fff;
+  padding: 1em;
+}
+
+/*
+.wrapper div:nth-child(odd){
+  background: #ddd;
+}
+*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 0.5em;
+  grid-auto-rows: minmax(200px, auto);
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper2 {
+  display: grid;
+  grid-gap: 10px;
+  /*grid-template-columns: repeat(4, [col] 150px ) ;*/
+  grid-template-columns: 1fr;
+  /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+  grid-template-rows: repeat(2, [row] auto  );
+  background-color: #fff;
+  color: #444;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-gap: 0.5em;
+  grid-auto-rows: minmax(40px, auto);
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.wrapper4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  grid-auto-rows: minmax(30px, auto);
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+body { 
+  margin: 0; 
+  background: #fff;
+}
+
+/*header { 
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+}
+header div { 
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; 
+  width: 200px; 
+  margin: .5vw; 
+}
+header div img { 
+  width: 100%; 
+  height: auto; 
+
+}
+@media screen and (max-width: 400px) {
+  header div { margin: 0; }
+  header { padding: 0; }
+  
+}
+*/
+
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 25px;
+  color: red;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+a {
+  font-size: 16px;
+}
+
+
+.margin-bottom {
+	margin-bottom:15px;
+}
+
+.black-border {
+  border:solid 1px black;
+}
+
+.font-red {
+	color:red;
+}
+
+.font-lightgrey {
+	color:lightgrey;
+}
+
+.font-grey {
+	color:grey;
+}
+
+.background-grey {
+	background-color:grey;
+}
+
+.margin-left {
+	margin-left:15px;
+}
+
+.icon-nolink {
+  
+  color: black;
+
+  :link {
+      color: black;
+  }
+
+  :visited {
+      color: black;
+  }
+
+  :hover {
+      color: black;
+  }
+
+  :active {
+      color: black;
+  }
+
+}

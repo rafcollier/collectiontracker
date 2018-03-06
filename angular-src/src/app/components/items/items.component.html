@@ -1,0 +1,21 @@
+<body>
+<br><br>
+<br><br>
+
+<h1 class="page-header"><font size = "5">Enter new item</font></h1><br><br>
+
+<form (submit)="onItemSubmit()">
+  <div class="form-group">
+  <label><font size = "3">Brand (Nike, Adidas, Vans)</font></label>
+    <input type="text" [(ngModel)]="itemBrand" name="itemBrand" class="form-control margin-bottom">
+    <label><font size = "3">Model (Air Force 1, Chuck Taylor High-Top, Gazelle)</font></label>
+    <input type="text" [(ngModel)]="itemModel" name="itemModel" class="form-control margin-bottom">
+    <label><font size = "3">Colour</font></label>
+    <input type="text" [(ngModel)]="itemDescription" name="itemDescription" class="form-control margin-bottom">
+    <label><font size = "3">Link to image (https://i.imgur.com/ApMovzt.jpg)</font></label>
+    <input type="text" [(ngModel)]="itemImageURL" name="itemImageURL" class="form-control margin-bottom">
+    <input type="submit" class="btn btn-secondary btn-lg margin-bottom black-border" value="Submit">
+  </div>
+</form>
+
+</body>
