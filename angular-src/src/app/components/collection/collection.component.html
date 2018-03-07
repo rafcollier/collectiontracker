@@ -1,24 +1,50 @@
 <body>
 
 <div class = "wrapper4">
+
   <div><h5>SORT BY: </h5></div>
   <div *ngFor="let searchParam of searchParams; let k = index">
-    <div> <a href="" onClick="return false;"><span (click)="onSortClick(searchParam)"><p> {{searchParam }} </p></span></div>
+    <div> 
+      <a href="" onClick="return false;">
+        <span (click)="onSortClick(searchParam)"> {{searchParam }} </span>
+      </a>
+    </div>
   </div>
+
 </div>
 
 <div class = "wrapper">
   <div *ngFor="let item of items; let i = index">
-    <div> <a href="" onClick="return false;"><span (click)="onItemClick(item, i)"><img src={{item.itemImageURL}} width=190px></span></a></div>
+    <div>
+      <a href="" onClick="return false;">
+        <span (click)="onItemClick(item, i)"><img src={{item.itemImageURL}} width=190px></span>
+      </a>
+    </div>
   </div>
 </div>
 
 <div class = "wrapper3">
-  <div> <a href="" onClick="return false;"><span (click)="onPreviousClick()"><p> < Previous </p></span></a></div>
-  <div *ngFor="let indexPage of indexPages; let j = index">
-    <div> <a href="" onClick="return false;"><span (click)="onIndexClick(j)"><p> {{ indexPage }} </p></span></a></div>
+
+  <div> 
+    <a href="" onClick="return false;">
+      <span (click)="onPreviousClick()">  Previous </span>
+    </a>
   </div>
-  <div> <a href="" onClick="return false;"><span (click)="onNextClick()"><p> Next > </p></span></div>
+
+  <div *ngFor="let indexPage of indexPages; let j = index">
+    <div> 
+      <a href="" onClick="return false;">
+        <span (click)="onIndexClick(j)"> {{ indexPage }} </span>
+      </a>
+    </div>
+  </div>
+
+  <div> 
+    <a href="" onClick="return false;">
+      <span (click)="onNextClick()"> Next </span>
+    </a>
+  </div>
+  
 </div>
 
 
