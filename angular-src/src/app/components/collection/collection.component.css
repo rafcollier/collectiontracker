@@ -44,7 +44,7 @@
 
 .wrapper4 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0.5em;
   grid-auto-rows: minmax(30px, auto);
   justify-items: center;

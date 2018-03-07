@@ -17,7 +17,7 @@ export class CollectionComponent implements OnInit {
   numPages: number;
   currentPage: number = 1;
   indexPages: number[] = []; 
-  searchParams: string[] = ["date worn" , "brand" , "model", "colour"]; 
+  searchParams: string[] = ["Date" , "Brand" , "Model", "Colour"]; 
   searchParameter: string = "dateLastWorn";
 
   constructor(
@@ -97,11 +97,11 @@ export class CollectionComponent implements OnInit {
     this.currentPage = 1;
     this.offset = 0;
     
-    if(searchParameter == "brand") {
+    if(searchParameter == "Brand") {
       this.searchParameter = "itemBrand";
-    } else if (searchParameter == "colour") {
+    } else if (searchParameter == "Colour") {
       this.searchParameter = "itemDescription";
-    } else if (searchParameter == "model") {
+    } else if (searchParameter == "Model") {
       this.searchParameter = "itemModel";
     } else {
       this.searchParameter = "dateLastWorn";
