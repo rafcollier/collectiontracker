@@ -68,6 +68,11 @@ a {
 }
 
 
+.details {
+  max-width: 20%;
+  height: auto;
+}
+
 .margin-bottom {
 	margin-bottom:15px;
 }
