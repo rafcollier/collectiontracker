@@ -70,6 +70,12 @@
   align-items: center;
 }
 
+.responsive {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
 .wrapper2 {
   display: grid;
   margin-top: 100px;
