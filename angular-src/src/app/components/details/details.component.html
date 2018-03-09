@@ -1,25 +1,31 @@
 <body>
 
+<div class = "wrapper">
 
+<div>
+  <form (submit)="onWearTodaySubmit()" class="form-inline my-2 my-lg-0">
+    <button class="btn btn-secondary margin-bottom black-border" type="submit"><h4>Wear Today</h4></button>
+  </form>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="gallery">
+    <div *ngIf="oneItem">
+      <div class="gallery-item">
+        <img class=gallery-image src={{oneItem.itemImageURL}}>
+      </div> 
+    </div>
+  </div>
+</div>
 
 <div class = "wrapper">
  
 <div>
   <div *ngIf="oneItem">
-    <div><img class="details" src={{oneItem.itemImageURL}}></div>
+    <h2> {{ oneItem.itemBrand }} {{ oneItem.itemModel }} {{ oneItem.itemDescription }} </h2> 
   </div> 
-</div>
-
-<div>
-  <div *ngIf="oneItem">
-    <h2 class="font-red"> {{ oneItem.itemBrand }} {{ oneItem.itemModel }} {{ oneItem.itemDescription }} </h2> 
-  </div> 
-</div>
-
-<div>
-  <form (submit)="onWearTodaySubmit()" class="form-inline my-2 my-lg-0">
-    <button class="btn btn-secondary btn-lg margin-bottom black-border" type="submit"><h4>Wear Today</h4></button>
-  </form>
 </div>
 
 <div *ngIf="!wornBefore">
@@ -33,7 +39,7 @@
 <div>
   <div *ngIf="wornBefore">
     <div *ngFor="let wornDateString of wornDatesStrings; let i = index">
-      <h5> {{ wornDateString }} </h5>
+      <h4> {{ wornDateString }} </h4>
     </div>
   </div> 
 </div>

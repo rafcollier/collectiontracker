@@ -30,7 +30,7 @@ router.post('/items', (req, res, next) => {
 
 router.get('/getAllItems', (req, res, next) => {
   const offset = req.query.itemOffset;
-  Item.find({'itemUserName' : req.query.itemUserName}, null, {skip: Number(offset), limit: 15, sort: req.query.searchParameter }, (err, items) => {
+  Item.find({'itemUserName' : req.query.itemUserName}, null, {skip: Number(offset), limit: 8, sort: req.query.searchParameter }, (err, items) => {
     if (err) throw err;
 
     res.json(items);

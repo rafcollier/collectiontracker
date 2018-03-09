@@ -1,8 +1,7 @@
 <body>
 
-<div class = "wrapper4">
-
-  <div>Sort: </div>
+<div class = "wrapper3">
+  <div>&nbsp;</div>
   <div *ngFor="let searchParam of searchParams; let k = index">
     <div> 
       <a href="" onClick="return false;">
@@ -10,27 +9,36 @@
       </a>
     </div>
   </div>
-
+  <div>&nbsp;</div>
 </div>
 
-<div class = "wrapper">
-  <div *ngFor="let item of items; let i = index">
-    <div>
+
+
+<div class="container">
+  <div class="gallery">
+
+    <div *ngFor="let item of items; let i = index">
+      <div class="gallery-item">
       <a href="" onClick="return false;">
-        <span (click)="onItemClick(item, i)"><img src={{item.itemImageURL}} width=190px></span>
+        <span (click)="onItemClick(item, i)"><img class="gallery-image" src={{item.itemImageURL}}></span>
       </a>
+      </div>
     </div>
+
+    
   </div>
 </div>
 
-<div class = "wrapper3">
 
+<div class = "wrapper3">
+  <div>&nbsp;</div>
   <div> 
     <a href="" onClick="return false;">
-      <span (click)="onPreviousClick()">  Previous </span>
+      <span (click)="onPreviousClick()">  < Previous </span>
     </a>
   </div>
 
+  <!-- 
   <div *ngFor="let indexPage of indexPages; let j = index">
     <div> 
       <a href="" onClick="return false;">
@@ -38,12 +46,13 @@
       </a>
     </div>
   </div>
-
+  -->
   <div> 
     <a href="" onClick="return false;">
-      <span (click)="onNextClick()"> Next </span>
+      <span (click)="onNextClick()"> Next > </span>
     </a>
   </div>
+  <div>&nbsp;</div>
 
 </div>
 

@@ -28,7 +28,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
-   // return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
+    //return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   }
 
@@ -78,7 +78,7 @@ export class AuthService {
     options.headers = headers;
     options.search = params;
     console.log("In Auth Services, calling backend for all items");
-    ///return this.http.get('http://localhost:3000/items/getAllItems', options) //add this for local dev: http://localhost:3000/
+    //return this.http.get('http://localhost:3000/items/getAllItems', options) //add this for local dev: http://localhost:3000/
     return this.http.get('items/getAllItems', options) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   } 
