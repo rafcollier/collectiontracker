@@ -18,6 +18,7 @@ export class DetailsComponent implements OnInit {
 	oneItem: Object;
   wornDatesStrings: [String];
   wornBefore: Boolean = false;
+  username: String;
 
   constructor(
   	private route: ActivatedRoute,
@@ -38,7 +39,7 @@ export class DetailsComponent implements OnInit {
     this.authService.getOneItem(this.itemID).subscribe(entries => {
         this.oneItem = entries; 
         this.wornDatesStrings = entries["dateWornString"].reverse();
-        console.log("Back in details component with data on one item");
+        this.username = entries["itemUserName"];
 
         if(this.wornDatesStrings.length > 0) {
           this.wornBefore = true;
@@ -90,6 +91,11 @@ export class DetailsComponent implements OnInit {
 
   onDeleteItemSubmit() {
 
+    if(this.username == "demo") {
+      this.flashMessage.show('You can only delete an item from your own collection.', {cssClass: 'alert-danger', timeout: 3000});
+      return false;
+    }
+
     console.log("Calling auth service to delete one item with id: " + this.itemID);
     this.authService.deleteOneItem(this.itemID).subscribe(entries => {
       console.log("Back in details component after deleteing one item");
@@ -99,7 +105,7 @@ export class DetailsComponent implements OnInit {
       return false;
     });
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/collection']);
 
   }
 

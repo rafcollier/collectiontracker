@@ -24,6 +24,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ItemsComponent } from './components/items/items.component';
 import { DetailsComponent } from './components/details/details.component';
 import { CollectionComponent } from './components/collection/collection.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,12 +34,13 @@ const appRoutes: Routes = [
   //{path: 'search/:title', component: SearchComponent},
   //{path: 'dummy', component: DummyComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'demo', component: DemoComponent},
   //{path: 'displayall', component: DisplayallComponent},
   //{path: 'alltitles', component: AlltitlesComponent},
   {path: 'items', component: ItemsComponent, canActivate:[AuthGuard]},
-  {path: 'details', component: DetailsComponent, canActivate:[AuthGuard]},
+  {path: 'details', component: DetailsComponent},
   {path: 'collection', component: CollectionComponent, canActivate:[AuthGuard]},
-  {path: 'details/:item', component: DetailsComponent, canActivate:[AuthGuard]}
+  {path: 'details/:item', component: DetailsComponent}
 
 ]
 
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     //AlltitlesComponent,
     ItemsComponent,
     DetailsComponent,
-    CollectionComponent
+    CollectionComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

@@ -3,22 +3,22 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
-export class HomeComponent implements OnInit {
+export class DemoComponent implements OnInit {
+
   items: [Object];
   length: number;
   offset: number = 0;
   username: string;
-  itemsPerPage: number = 15; 
+  itemsPerPage: number = 10; 
   numPages: number;
   currentPage: number = 1;
   indexPages: number[] = []; 
-  searchParams: string[] = ["date worn" , "brand" , "model", "colour"]; 
+  searchParams: string[] = ["Date" , "Brand" , "Model", "Colour"]; 
   searchParameter: string = "dateLastWorn";
 
   constructor(
@@ -28,14 +28,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
  ngOnInit() {
-    this.authService.getProfile().subscribe(profile => {
-      this.username = profile.user.username;
-      this.getLength();
-    }, 
-    err => {
-        console.log(err);
-        return false;
-    });
+   this.username = "demo";
+   this.getLength();
   }
 
   getLength() {
@@ -98,11 +92,11 @@ export class HomeComponent implements OnInit {
     this.currentPage = 1;
     this.offset = 0;
     
-    if(searchParameter == "brand") {
+    if(searchParameter == "Brand") {
       this.searchParameter = "itemBrand";
-    } else if (searchParameter == "colour") {
+    } else if (searchParameter == "Colour") {
       this.searchParameter = "itemDescription";
-    } else if (searchParameter == "model") {
+    } else if (searchParameter == "Model") {
       this.searchParameter = "itemModel";
     } else {
       this.searchParameter = "dateLastWorn";
@@ -120,3 +114,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+

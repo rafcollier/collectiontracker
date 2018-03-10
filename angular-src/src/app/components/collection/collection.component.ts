@@ -13,7 +13,7 @@ export class CollectionComponent implements OnInit {
   length: number;
   offset: number = 0;
   username: string;
-  itemsPerPage: number = 6; 
+  itemsPerPage: number = 10; 
   numPages: number;
   currentPage: number = 1;
   indexPages: number[] = []; 
@@ -53,7 +53,7 @@ export class CollectionComponent implements OnInit {
   }
 
   getItems() {
-    this.authService.getAllItems(this.username, this.offset, this.searchParameter).subscribe(entries => {
+    this.authService.getAllItems(this.username, this.offset, this.itemsPerPage, this.searchParameter).subscribe(entries => {
       this.items = entries; 
     }, 
     err => {

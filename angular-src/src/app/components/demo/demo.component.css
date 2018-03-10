@@ -1,4 +1,49 @@
 
+.container {
+  max-width: 180rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  background: #fff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
+}
+
+.gallery-item {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 16rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
+}
+
+
 .wrapper div {
   background: #fff;
   padding: 1em;
@@ -44,24 +89,12 @@
 
 .wrapper4 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0.5em;
   grid-auto-rows: minmax(30px, auto);
   justify-items: center;
   align-items: center;
-  background-color: #fff;
-}
-
-.wrapper5 {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2em;
-  grid-auto-rows: minmax(50px, auto);
-  justify-items: center;
-  align-items: center;
-  background-color: #fff;
-  padding: 20px;
+  background-color: #eee;
 }
 
 body { 
@@ -69,39 +102,8 @@ body {
   background: #fff;
 }
 
-/*header { 
-  padding: .5vw;
-  font-size: 0;
-  display: -ms-flexbox;
-  -ms-flex-wrap: wrap;
-  -ms-flex-direction: column;
-  -webkit-flex-flow: row wrap; 
-  flex-flow: row wrap; 
-  display: -webkit-box;
-  display: flex;
-}
-header div { 
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
-  flex: auto; 
-  width: 200px; 
-  margin: .5vw; 
-}
-header div img { 
-  width: 100%; 
-  height: auto; 
-
-}
-@media screen and (max-width: 400px) {
-  header div { margin: 0; }
-  header { padding: 0; }
-  
-}
-*/
-
-
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h1 {
@@ -119,15 +121,12 @@ h4 {
 
 a {
   font-size: 16px;
+  color: lightgrey;
 }
 
 
 .margin-bottom {
 	margin-bottom:15px;
-}
-
-.margin-top {
-  margin-bottom:50px;
 }
 
 .black-border {

@@ -20,7 +20,10 @@ input[type="submit"] {
 
 .navbar {
   background-color: #99ccff; 
-  border: 0;
+  border-bottom: 1;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom:20px;
 }
 
 
