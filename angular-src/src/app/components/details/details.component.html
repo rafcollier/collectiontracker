@@ -1,19 +1,19 @@
 <body>
 
-<div class = "wrapper">
 
-<div>
-  <form (submit)="onWearTodaySubmit()" class="form-inline my-2 my-lg-0">
-    <button class="btn btn-secondary margin-bottom black-border" type="submit"><h4>Wear Today</h4></button>
-  </form>
-</div>
-
-</div>
 
 <div class="wrapper">
   <div *ngIf="oneItem">
     <img class="responsive" src={{oneItem.itemImageURL}}>
   </div>
+</div>
+
+<div class = "wrapper">
+<div>
+  <form (submit)="onWearTodaySubmit()" class="form-inline my-2 my-lg-0">
+    <button class="btn btn-secondary margin-bottom black-border" type="submit"><h4>Wear Today</h4></button>
+  </form>
+</div>
 </div>
 
 <div class = "wrapper">
@@ -42,7 +42,7 @@
 
 </div>
 
-<div class="wrapper2">
+<div class="wrapper">
 
 <div>
   <form (submit)="onDeleteItemSubmit()" class="form-inline my-2 my-lg-0">
