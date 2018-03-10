@@ -4,6 +4,12 @@
   padding: 1em;
 }
 
+.responsive {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
 /*
 .wrapper div:nth-child(odd){
   background: #ddd;
