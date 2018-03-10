@@ -13,7 +13,7 @@ export class CollectionComponent implements OnInit {
   length: number;
   offset: number = 0;
   username: string;
-  itemsPerPage: number = 10; 
+  itemsPerPage: number = 6; 
   numPages: number;
   currentPage: number = 1;
   indexPages: number[] = []; 
