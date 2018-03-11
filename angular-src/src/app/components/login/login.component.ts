@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
       username: this.username,
       password: this.password
     }
-    console.log("Login form submitted with: " + user.username);
 
     this.authService.authenticateUser(user).subscribe(data => {
       console.log("Login request returned from server");

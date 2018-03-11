@@ -47,20 +47,15 @@ router.get('/getOneItem', (req, res, next) => {
 });
 
 router.delete('/deleteOneItem', (req, res, next) => {
-  console.log("In the backend router to delte one item by id");
   console.log(req.query);
 
   Item.findByIdAndRemove(req.query.itemID, (err, item) => { 
     if (err) throw err;
     
-    console.log("Item removed from database");
-
   });
 });
 
 router.put('/updateWornToday', (req, res, next) => {
-  console.log("In the backend router to updateWornToday");
-  console.log(req.body);
   const query = {_id:req.body.itemID};
   const newWornDate = req.body.wornDate;
   const newWornDateString = req.body.wornDateString;

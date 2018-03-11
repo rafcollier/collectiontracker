@@ -29,6 +29,7 @@
   max-width: 400px;
   object-fit: cover;
   transition: transform 400ms ease-out;
+
 }
 
 @supports (display: grid) {
@@ -44,17 +45,10 @@
   }
 }
 
-
 .wrapper div {
   background: #fff;
   padding: 1em;
 }
-
-/*
-.wrapper div:nth-child(odd){
-  background: #ddd;
-}
-*/
 
 .wrapper {
   display: grid;

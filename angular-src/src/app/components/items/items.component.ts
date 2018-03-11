@@ -55,7 +55,6 @@ export class ItemsComponent implements OnInit {
     //Check success of write to database
     console.log("Calling auth service to add new item");
     this.authService.submitItem(item).subscribe(data => {
-      console.log("Back in the front-end after adding a new item");
       this.itemBrand = "";
       this.itemModel = "";
       this.itemDescription = "";

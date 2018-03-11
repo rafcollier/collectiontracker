@@ -114,7 +114,6 @@ export class HomeComponent implements OnInit {
   }
 
   setPage(page) {
-    console.log("In Set Page");
 
 
   }

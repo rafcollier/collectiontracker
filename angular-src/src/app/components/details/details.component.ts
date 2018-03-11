@@ -98,7 +98,6 @@ export class DetailsComponent implements OnInit {
 
     console.log("Calling auth service to delete one item with id: " + this.itemID);
     this.authService.deleteOneItem(this.itemID).subscribe(entries => {
-      console.log("Back in details component after deleteing one item");
     },
     err => {
       console.log(err);

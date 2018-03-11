@@ -33,7 +33,6 @@ export class AuthService {
   }
 
   getProfile() {
-    console.log("In auth service to get profile");
     this.loadToken();
     let headers = new Headers();
     headers.append('Authorization', this.authToken);
@@ -57,7 +56,6 @@ export class AuthService {
   } 
 
   submitItem(item) {
-    console.log("In auth services to make new item request to backend");
     this.loadToken();
     let headers = new Headers();
     headers.append('Authorization', this.authToken);
@@ -78,7 +76,6 @@ export class AuthService {
     params.set('searchParameter', searchParameter);
     options.headers = headers;
     options.search = params;
-    console.log("In Auth Services, calling backend for all items");
     //return this.http.get('http://localhost:3000/items/getAllItems', options) //add this for local dev: http://localhost:3000/
     return this.http.get('items/getAllItems', options) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
@@ -92,7 +89,6 @@ export class AuthService {
     params.set('itemID', itemID);
     options.headers = headers;
     options.search = params;
-    console.log("In auth service calling node for info on one item with id " + options.search);
     //return this.http.get('http://localhost:3000/items/getOneItem', options)
     return this.http.get('items/getOneItem', options)
       .map(res => res.json());
@@ -106,14 +102,12 @@ export class AuthService {
     params.set('itemID', itemID);
     options.headers = headers;
     options.search = params;
-    console.log("In auth service calling node to delete one item with id " + options.search);
     //return this.http.delete('http://localhost:3000/items/deleteOneItem', options)
     return this.http.delete('items/deleteOneItem', options)
       .map(res => res.json());
   }
 
   putWornToday(updateWornToday) {
-    console.log(updateWornToday);
     let body = JSON.stringify(updateWornToday);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

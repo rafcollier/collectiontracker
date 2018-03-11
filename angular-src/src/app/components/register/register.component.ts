@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterSubmit(){
-    console.log("Registration form submitted");
     const user = {
       username: this.username,
       password: this.password
