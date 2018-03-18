@@ -68,8 +68,12 @@ export class DetailsComponent implements OnInit {
     const dateString = monthNames[month] + " " + day + ", " + year; 
 
     if(dateString == this.wornDatesStrings[0]) {
-      this.flashMessage.show('You already indicated you wore this today.', {cssClass: 'alert-danger', timeout: 3000});
-      return false;
+      if(this.username == "demo") {
+        this.flashMessage.show('The demo allows you to "wear today" more than once', {cssClass: 'alert-warning', timeout: 3000});
+      } else {  
+        this.flashMessage.show('You already indicated you wore this today.', {cssClass: 'alert-danger', timeout: 3000});
+        return false;
+      }
     }
 
     const updateWornToday = {
