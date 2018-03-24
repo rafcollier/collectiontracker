@@ -88,8 +88,12 @@ export class DetailsComponent implements OnInit {
       console.log(err);
       return false;
     });
-
-    this.ngOnInit();
+  
+    if(this.username == "demo") {
+      this.router.navigate(['/demo']);
+    } else {
+      this.router.navigate(['/collection']);
+    }
 
   }
 
