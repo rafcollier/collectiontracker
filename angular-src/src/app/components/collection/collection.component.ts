@@ -31,10 +31,7 @@ export class CollectionComponent implements OnInit {
  ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username;
-      if(this.currentPage == 1) 
-        this.getLength();
-      else
-        this.getItems();
+      this.getLength();
     }, 
     err => {
         console.log(err);
@@ -104,7 +101,7 @@ export class CollectionComponent implements OnInit {
     if(this.currentPage < this.numPages){
       this.currentPage += 1;
       this.offset += this.itemsPerPage;
-      this.ngOnInit();
+      this.getItems();
     }
   }
 
@@ -112,7 +109,7 @@ export class CollectionComponent implements OnInit {
     if(this.currentPage > 1){
       this.currentPage -= 1;
       this.offset -= this.itemsPerPage;
-      this.ngOnInit();
+      this.getItems();
     }
   }
 
