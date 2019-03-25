@@ -27,8 +27,8 @@ export class AuthService {
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
-    //return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
+    //return this.http.post('users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
+    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   }
 
@@ -37,8 +37,8 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('users/profile', {headers: headers}) //add this for local dev: http://localhost:3000/
-    //return this.http.get('http://localhost:3000/users/profile', {headers: headers}) //add this for local dev: http://localhost:3000/
+    //return this.http.get('users/profile', {headers: headers}) //add this for local dev: http://localhost:3000/
+    return this.http.get('http://localhost:3000/users/profile', {headers: headers}) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   } 
 
@@ -50,8 +50,8 @@ export class AuthService {
     params.set('itemUserName', username);
     options.headers = headers;
     options.search = params;
-    //return this.http.get('http://localhost:3000/items/collectionLength', options) //add this for local dev: http://localhost:3000/
-    return this.http.get('items/collectionLength', options) //add this for local dev: http://localhost:3000/
+    return this.http.get('http://localhost:3000/items/collectionLength', options) //add this for local dev: http://localhost:3000/
+    //return this.http.get('items/collectionLength', options) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   } 
 
@@ -76,8 +76,8 @@ export class AuthService {
     params.set('searchParameter', searchParameter);
     options.headers = headers;
     options.search = params;
-    //return this.http.get('http://localhost:3000/items/getAllItems', options) //add this for local dev: http://localhost:3000/
-    return this.http.get('items/getAllItems', options) //add this for local dev: http://localhost:3000/
+    return this.http.get('http://localhost:3000/items/getAllItems', options) //add this for local dev: http://localhost:3000/
+    //return this.http.get('items/getAllItems', options) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   } 
 
@@ -89,8 +89,8 @@ export class AuthService {
     params.set('itemID', itemID);
     options.headers = headers;
     options.search = params;
-    //return this.http.get('http://localhost:3000/items/getOneItem', options)
-    return this.http.get('items/getOneItem', options)
+    return this.http.get('http://localhost:3000/items/getOneItem', options)
+    //return this.http.get('items/getOneItem', options)
       .map(res => res.json());
   }
 
@@ -113,8 +113,8 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions();
     options.headers = headers;
-    //return this.http.put('http://localhost:3000/items/updateWornToday', body, options) //add this for local dev: http://localhost:3000/
-    return this.http.put('items/updateWornToday', body, options) //add this for local dev: http://localhost:3000/
+    return this.http.put('http://localhost:3000/items/updateWornToday', body, options) //add this for local dev: http://localhost:3000/
+    //return this.http.put('items/updateWornToday', body, options) //add this for local dev: http://localhost:3000/
       .map(res => res.json());
   } 
 
