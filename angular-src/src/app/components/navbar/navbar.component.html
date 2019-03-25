@@ -39,6 +39,10 @@
         <a class="nav-link" [routerLink]="['/collection']"><font size = "2">Collection</font></a>
       </li>
 
+      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" c>
+        <a class="nav-link" [routerLink]="['/history']"><font size = "2">History</font></a>
+      </li>
+
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive] = "['active']" [routerLinkActiveOptions] = "{exact:true}" c>
         <a class="nav-link" [routerLink]="['/login']"><font size = "2">Login</font></a>
       </li>

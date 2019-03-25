@@ -25,6 +25,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { DetailsComponent } from './components/details/details.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { DemoComponent } from './components/demo/demo.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'items', component: ItemsComponent, canActivate:[AuthGuard]},
   {path: 'details', component: DetailsComponent},
   {path: 'collection', component: CollectionComponent, canActivate:[AuthGuard]},
+  {path: 'history', component: HistoryComponent, canActivate:[AuthGuard]},
   {path: 'details/:item', component: DetailsComponent}
 
 ]
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     ItemsComponent,
     DetailsComponent,
     CollectionComponent,
-    DemoComponent
+    DemoComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

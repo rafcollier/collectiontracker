@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="gallery">
+
+    <div *ngFor="let displayItem of displayItems; let i = index">
+      <div class="gallery-item">
+    	<img class="gallery-image" src={{displayItem.url}}>
+      </div>
+      <div class="gallery-number">
+        {{displayItem.date}}	
+      </div>
+    </div>
+    
+  </div>
+</div>

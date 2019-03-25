@@ -15,19 +15,28 @@
 
 .gallery-item {
   /* Minimum width of 24rem and grow to fit available space */
-  flex: 1 0 16rem;
+  flex: 0 0 16rem;
   /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
   margin: 1rem;
-  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0);
   overflow: hidden;
+}
+
+.gallery-number { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
 .gallery-image {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 400px;
   object-fit: cover;
   transition: transform 400ms ease-out;
+
 }
 
 @supports (display: grid) {
@@ -43,17 +52,10 @@
   }
 }
 
-
 .wrapper div {
   background: #fff;
   padding: 1em;
 }
-
-/*
-.wrapper div:nth-child(odd){
-  background: #ddd;
-}
-*/
 
 .wrapper {
   display: grid;
@@ -103,7 +105,7 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 h1 {
@@ -126,7 +128,7 @@ a {
 
 
 .margin-bottom {
-	margin-bottom:15px;
+  margin-bottom:15px;
 }
 
 .black-border {
@@ -134,23 +136,23 @@ a {
 }
 
 .font-red {
-	color:red;
+  color:red;
 }
 
 .font-lightgrey {
-	color:lightgrey;
+  color:lightgrey;
 }
 
 .font-grey {
-	color:grey;
+  color:grey;
 }
 
 .background-grey {
-	background-color:grey;
+  background-color:grey;
 }
 
 .margin-left {
-	margin-left:15px;
+  margin-left:15px;
 }
 
 .icon-nolink {

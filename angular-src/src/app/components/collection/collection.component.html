@@ -1,32 +1,29 @@
 <body>
 
-<div class = "wrapper3">
-  <div *ngFor="let searchParam of searchParams; let k = index">
-    <div> 
-      <a href="" onClick="return false;">
-        <span (click)="onSortClick(searchParam)"> {{searchParam }} </span>
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
 <div class="container">
   <div class="gallery">
 
     <div *ngFor="let item of items; let i = index">
+
       <div class="gallery-item">
       <a href="" onClick="return false;">
         <span (click)="onItemClick(item, i)"><img class="gallery-image" src={{item.itemImageURL}}></span>
       </a>
       </div>
+      <div class="gallery-number">
+        {{item.dateWornString.length}} 
+      </div>
+      <div class="gallery-number">
+        <a href="" onClick="return false;">
+          <span (click)="onWearTodaySubmit(item, i)">Wear</span>
+        </a>
+      </div>
     </div>
-
     
   </div>
 </div>
 
+<hr>
 
 <div class = "wrapper3">
   <div> 
@@ -39,15 +36,6 @@
     <div><p> Page {{ currentPage }} of {{ numPages }} </p></div>  
   </div>
 
-  <!-- 
-  <div *ngFor="let indexPage of indexPages; let j = index">
-    <div> 
-      <a href="" onClick="return false;">
-        <span (click)="onIndexClick(j)"> {{ indexPage }} </span>
-      </a>
-    </div>
-  </div>
-  -->
   <div> 
     <a href="" onClick="return false;">
       <span (click)="onNextClick()"> Next > </span>

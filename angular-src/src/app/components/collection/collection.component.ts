@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-collection',
@@ -13,12 +14,13 @@ export class CollectionComponent implements OnInit {
   length: number;
   offset: number = 0;
   username: string;
-  itemsPerPage: number = 6; 
+  itemsPerPage: number = 10; 
   numPages: number;
   currentPage: number = 1;
   indexPages: number[] = []; 
-  searchParams: string[] = ["Date" , "Brand" , "Model", "Colour"]; 
   searchParameter: string = "dateLastWorn";
+  itemID: String;
+  wornDatesStrings: [String];
 
   constructor(
       private flashMessage: FlashMessagesService,
@@ -62,20 +64,40 @@ export class CollectionComponent implements OnInit {
     });
   }
 
+  onWearTodaySubmit(item, index){
+    this.itemID = item["_id"];
+    this.authService.getOneItem(this.itemID).subscribe(entries => {
+      this.wornDatesStrings = entries["dateWornString"].reverse();
+     },
+     err => {
+       console.log(err);
+       return false;
+     });
+
+   const today = moment();
+   const dateString = today.format('MMMM DD, YYYY');
+   const updateWornToday = {
+     itemID: this.itemID, 
+     wornDate: today,
+     wornDateString: dateString 
+   }
+
+   this.authService.putWornToday(updateWornToday).subscribe(entries => {
+     this.ngOnInit();
+   },
+   err => {
+     console.log(err);
+     return false;
+   });
+
+  }
+
   onItemClick(item, index) {
     const itemID = item["_id"]; 
     this.router.navigate(['/details', itemID]);
   }
 
-  onIndexClick(index) {
-    this.currentPage = index +1;
-    this.offset = this.itemsPerPage * index;
-    this.getItems();
-  }
-
   onNextClick() {
-    console.log(this.currentPage);
-    console.log(this.offset);
     if(this.currentPage < this.numPages){
       this.currentPage += 1;
       this.offset += this.itemsPerPage;
@@ -84,38 +106,11 @@ export class CollectionComponent implements OnInit {
   }
 
   onPreviousClick() {
-    console.log(this.currentPage);
-    console.log(this.offset);
     if(this.currentPage > 1){
       this.currentPage -= 1;
       this.offset -= this.itemsPerPage;
       this.getItems();
     }
-  }
-
-  onSortClick(searchParameter) {
-    this.currentPage = 1;
-    this.offset = 0;
-    
-    if(searchParameter == "Brand") {
-      this.searchParameter = "itemBrand";
-    } else if (searchParameter == "Colour") {
-      this.searchParameter = "itemDescription";
-    } else if (searchParameter == "Model") {
-      this.searchParameter = "itemModel";
-    } else {
-      this.searchParameter = "dateLastWorn";
-    }
-   
-    console.log("in sort " + searchParameter);
-    this.getItems();
-
-  }
-
-  setPage(page) {
-    console.log("In Set Page");
-
-
   }
 
 }
